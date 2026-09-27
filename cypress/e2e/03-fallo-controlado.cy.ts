@@ -7,6 +7,7 @@ describe('Fallo controlado: error de API y recuperación', () => {
     cy.wait('@failedOrder');
     cy.get('#feedback').should('contain.text', 'Servicio temporalmente no disponible');
     cy.get('#cart-items').should('contain.text', 'Cappuccino');
+    cy.screenshot('fallo-controlado-error-visible');
     cy.intercept('POST', '/api/orders').as('recoveredOrder');
     cy.get('#confirm-order').click();
     cy.wait('@recoveredOrder').its('response.statusCode').should('eq', 201);
