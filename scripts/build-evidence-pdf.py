@@ -22,12 +22,7 @@ styles.add(ParagraphStyle(name='BodyCafe', parent=styles['BodyText'], fontSize=1
 styles.add(ParagraphStyle(name='Small', parent=styles['BodyText'], fontSize=9, leading=12, textColor=colors.HexColor('#718078')))
 
 def footer(canvas, doc):
-    canvas.saveState()
-    canvas.setFont('Helvetica', 8)
-    canvas.setFillColor(colors.HexColor('#718078'))
-    canvas.drawString(0.65 * inch, 0.4 * inch, 'Brújula Cafe - evidencia de evaluacion E2E')
-    canvas.drawRightString(7.85 * inch, 0.4 * inch, f'Pagina {doc.page}')
-    canvas.restoreState()
+    pass
 
 doc = SimpleDocTemplate(str(OUT), pagesize=letter, rightMargin=.65*inch, leftMargin=.65*inch, topMargin=.55*inch, bottomMargin=.65*inch)
 story = [Spacer(1, .35*inch), Paragraph('Brújula Cafe', styles['TitleCafe']), Paragraph('Reto: construir y probar una aplicacion web de extremo a extremo', styles['Sub'])]
