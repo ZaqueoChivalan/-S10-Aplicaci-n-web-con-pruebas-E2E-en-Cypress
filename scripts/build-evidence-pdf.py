@@ -32,8 +32,8 @@ def footer(canvas, doc):
 doc = SimpleDocTemplate(str(OUT), pagesize=letter, rightMargin=.65*inch, leftMargin=.65*inch, topMargin=.55*inch, bottomMargin=.65*inch)
 story = [Spacer(1, .35*inch), Paragraph('Brújula Cafe', styles['TitleCafe']), Paragraph('Reto: construir y probar una aplicacion web de extremo a extremo', styles['Sub'])]
 table = Table([
-    ['Repositorio publico', '[COMPLETAR] https://github.com/USUARIO/REPOSITORIO'],
-    ['GitHub Actions exitoso', '[COMPLETAR] https://github.com/USUARIO/REPOSITORIO/actions/runs/ID'],
+    ['Repositorio publico', 'https://github.com/ZaqueoChivalan/-S10-Aplicaci-n-web-con-pruebas-E2E-en-Cypress'],
+    ['GitHub Actions exitoso', 'https://github.com/ZaqueoChivalan/-S10-Aplicaci-n-web-con-pruebas-E2E-en-Cypress/actions/runs/36288228552'],
     ['Video - maximo 3 minutos', '[COMPLETAR] enlace publico al video'],
     ['Resultado local', '3 specs, 3 passing, 0 failing'],
 ], colWidths=[1.7*inch, 5.8*inch])
@@ -47,6 +47,6 @@ for title, image_path, caption in screens:
         story.append(Paragraph('Captura no encontrada en la ejecucion local.', styles['BodyCafe']))
     story += [Spacer(1, 5), Paragraph(caption, styles['Small']), Spacer(1, 12)]
     story.append(PageBreak())
-story += [Paragraph('Evidencia tecnica y guion del video', styles['H']), Paragraph('Camino exitoso: seleccionar Espresso y Croissant, aumentar Espresso a cantidad 2, confirmar y mostrar el identificador y total. En cypress/e2e/01-camino-exitoso.cy.ts, cy.intercept() usa el alias @createOrder para validar el cuerpo de la solicitud y la respuesta 201, y despues se verifica GET /api/orders.', styles['BodyCafe']), Paragraph('Validacion: al iniciar el pedido esta vacio, el boton Confirmar pedido esta disabled y el intercept no recibe solicitudes POST. Fallo controlado: se simula un 503 con times: 1, se muestra el mensaje, se conserva el carrito y el siguiente click se recupera contra la API real.', styles['BodyCafe']), Paragraph('Guion sugerido del video (maximo 3 minutos): 0:00 mostrar el menu; 0:30 ejecutar el camino exitoso; 1:20 explicar brevemente el alias de cy.intercept(); 1:50 mostrar el resumen verde de Cypress; 2:20 abrir la ejecucion exitosa de GitHub Actions.', styles['BodyCafe']), Paragraph('Accion pendiente del estudiante: reemplazar los tres campos [COMPLETAR] por enlaces publicos reales despues de subir el repositorio, ejecutar GitHub Actions y publicar el video.', styles['BodyCafe'])]
+story += [Paragraph('Evidencia tecnica y guion del video', styles['H']), Paragraph('Camino exitoso: seleccionar Espresso y Croissant, aumentar Espresso a cantidad 2, confirmar y mostrar el identificador y total. En cypress/e2e/01-camino-exitoso.cy.ts, cy.intercept() usa el alias @createOrder para validar el cuerpo de la solicitud y la respuesta 201, y despues se verifica GET /api/orders.', styles['BodyCafe']), Paragraph('Validacion: al iniciar el pedido esta vacio, el boton Confirmar pedido esta disabled y el intercept no recibe solicitudes POST. Fallo controlado: se simula un 503 con times: 1, se muestra el mensaje, se conserva el carrito y el siguiente click se recupera contra la API real.', styles['BodyCafe']), Paragraph('Guion sugerido del video (maximo 3 minutos): 0:00 mostrar el menu; 0:30 ejecutar el camino exitoso; 1:20 explicar brevemente el alias de cy.intercept(); 1:50 mostrar el resumen verde de Cypress; 2:20 abrir la ejecucion exitosa de GitHub Actions.', styles['BodyCafe']), Paragraph('Accion pendiente del estudiante: reemplazar el campo [COMPLETAR] del video por un enlace publico despues de publicar la grabacion.', styles['BodyCafe'])]
 doc.build(story, onFirstPage=footer, onLaterPages=footer)
 print(OUT)
