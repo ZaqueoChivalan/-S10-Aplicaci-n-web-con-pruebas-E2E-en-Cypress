@@ -1,0 +1,19 @@
+{
+  "name": "cafeteria-e2e-cypress",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de pedidos para cafetería con pruebas E2E en Cypress",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test start http://localhost:3000 cy:run",
+    "reset-data": "node scripts/reset-data.js"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "start-server-and-test": "^2.0.9",
+    "typescript": "^5.7.2"
+  }
+}

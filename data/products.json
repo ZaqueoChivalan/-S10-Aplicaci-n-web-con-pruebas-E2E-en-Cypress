@@ -1,0 +1,34 @@
+[
+  {
+    "id": "espresso",
+    "name": "Espresso",
+    "description": "Café intenso de origen local",
+    "price": 2.5,
+    "stock": 12,
+    "available": true
+  },
+  {
+    "id": "cappuccino",
+    "name": "Cappuccino",
+    "description": "Espresso, leche vaporizada y espuma",
+    "price": 3.75,
+    "stock": 7,
+    "available": true
+  },
+  {
+    "id": "croissant",
+    "name": "Croissant",
+    "description": "Hojaldre de mantequilla recién horneado",
+    "price": 2.25,
+    "stock": 5,
+    "available": true
+  },
+  {
+    "id": "sandwich",
+    "name": "Sándwich vegetal",
+    "description": "Pan artesanal, vegetales y queso crema",
+    "price": 5.5,
+    "stock": 0,
+    "available": false
+  }
+]
